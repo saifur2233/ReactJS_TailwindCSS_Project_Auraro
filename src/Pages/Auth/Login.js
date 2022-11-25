@@ -2,12 +2,22 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import Loginimg from "../../assets/images/auth/login.jpg";
+import useToken from "../../Hooks/useToken";
+import toast from "react-hot-toast";
+
 const Login = () => {
   const { logIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState(null);
+
+  const [loginUserEmail, setLoginUserEmail] = useState("");
+  const [token] = useToken(loginUserEmail);
+
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -20,24 +30,10 @@ const Login = () => {
     logIn(email, password)
       .then((result) => {
         const user = result.user;
-        const currentUser = {
-          email: user.email,
-        };
-        // Generate jwt token
-        fetch("https://foodota-server.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            // jwt token store in local storage
-            localStorage.setItem("foodota", data.token);
-            form.reset();
-            navigate(from, { replace: true });
-          });
+        toast("User Login Successfully");
+        setLoginUserEmail(user?.email);
+        form.reset();
+        navigate(from, { replace: true });
       })
       .catch(() => {
         setError("Eamil and Password not match!...");

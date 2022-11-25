@@ -35,6 +35,7 @@ const SignUp = () => {
     }
     setUserName(name);
     setUserRole(role);
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
