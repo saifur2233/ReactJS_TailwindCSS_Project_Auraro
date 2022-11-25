@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ProductCard from "./ProductCard";
 
 const HomeProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
+    <div className="my-10">
+      <div className="text-center">
+        <h1 className="text-5xl text-secondary font-bold">
+          New Resale Products
+        </h1>
+        <p className="py-6">
+          Magna sit amet purus gravida quis blandit turpis cursus. Venenatis
+          tellus in metus vulputate eu scelerisque felis.
+        </p>
+      </div>
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product}></ProductCard>
+        ))}
       </div>
     </div>
   );
