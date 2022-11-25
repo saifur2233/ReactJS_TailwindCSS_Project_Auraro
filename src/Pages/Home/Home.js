@@ -1,10 +1,15 @@
 import React from "react";
+import HomeBannerSection from "./HomeBannerSection";
+import HomeProducts from "./HomeProducts";
+import ItemBanner from "./ItemBanner";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <HomeBannerSection></HomeBannerSection>
+      <ItemBanner></ItemBanner>
+      <HomeProducts></HomeProducts>
+    </>
   );
 };
 
