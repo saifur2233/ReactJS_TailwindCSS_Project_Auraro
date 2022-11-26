@@ -15,9 +15,9 @@ const ProductCard = ({ product }) => {
           <p>Status: {condition}</p>
         </div>
         <div className="card-actions flex justify-center">
-          <button className="btn btn-outline btn-secondary">Buy Now</button>
-          <button className="btn btn-outline btn-accent">WishList</button>
-          <button className="btn btn-outline btn-warning">View Details</button>
+          <button className="btn btn-outline btn-success">Buy Now</button>
+          <button className="btn btn-outline btn-info">WishList</button>
+          <button className="btn btn-outline btn-error">View Details</button>
         </div>
       </div>
     </div>
