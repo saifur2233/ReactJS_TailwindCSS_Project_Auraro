@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/UserContext";
 import SignUpImg from "../../assets/images/auth/login1.png";
 import toast from "react-hot-toast";
 import useToken from "../../Hooks/useToken";
+import axios from "axios";
 const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,8 +34,6 @@ const SignUp = () => {
       setError(`Your Password must be 6 character`);
       return;
     }
-    setUserName(name);
-    setUserRole(role);
 
     createUser(email, password)
       .then((result) => {
@@ -46,8 +45,25 @@ const SignUp = () => {
 
         updateUser(userInfo)
           .then(() => {
-            saveUser(name, email, role);
-            form.reset();
+            console.log("save user ", name, email, role);
+            //saveUser(name, email, role);
+            axios({
+              method: "post",
+              url: "http://localhost:5000/users",
+              data: {
+                name: name,
+                email: email,
+                role: role,
+              },
+            })
+              .then(function (response) {
+                console.log(response);
+                // setCreatedUserEmail(response)
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            //form.reset();
             navigate("/");
           })
           .catch((err) => setError(err));
@@ -61,18 +77,7 @@ const SignUp = () => {
 
   const saveUser = (name, email, role) => {
     const user = { name, email, role };
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Save user ", data);
-        setCreatedUserEmail(email);
-      });
+    console.log(user);
   };
 
   const handleGoogleSignup = () => {
