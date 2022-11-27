@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
-  const { name, image, description, sellPrice, condition } = product;
+const ProductCard = ({ product, setOrder }) => {
+  const navigate = useNavigate();
+  const { _id, name, image, description, sellPrice, condition } = product;
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
@@ -15,9 +17,22 @@ const ProductCard = ({ product }) => {
           <p>Status: {condition}</p>
         </div>
         <div className="card-actions flex justify-center">
-          <button className="btn btn-outline btn-success">Buy Now</button>
+          <label
+            // disabled={slots.length === 0}
+            onClick={() => setOrder(product)}
+            htmlFor="order-modal"
+            className="btn btn-outline btn-success"
+          >
+            Buy Now
+          </label>
+
           <button className="btn btn-outline btn-info">WishList</button>
-          <button className="btn btn-outline btn-error">View Details</button>
+          <button
+            onClick={() => navigate(`/category/${_id}`)}
+            className="btn btn-outline btn-error"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
