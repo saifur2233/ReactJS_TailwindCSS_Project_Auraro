@@ -45,24 +45,8 @@ const SignUp = () => {
 
         updateUser(userInfo)
           .then(() => {
-            console.log("save user ", name, email, role);
-            //saveUser(name, email, role);
-            axios({
-              method: "post",
-              url: "http://localhost:5000/users",
-              data: {
-                name: name,
-                email: email,
-                role: role,
-              },
-            })
-              .then(function (response) {
-                console.log(response);
-                // setCreatedUserEmail(response)
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
+            saveUser(name, email, role);
+
             //form.reset();
             navigate("/");
           })
@@ -76,8 +60,17 @@ const SignUp = () => {
   };
 
   const saveUser = (name, email, role) => {
-    const user = { name, email, role };
-    console.log(user);
+    const user = { name: name, email: email, role: role };
+    console.log("Save User   :", user.name);
+    axios
+      .post("http://localhost:5000/users", user)
+      .then(function (response) {
+        console.log(response);
+        setCreatedUserEmail(email);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   const handleGoogleSignup = () => {
@@ -89,7 +82,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="hero py-20">
+    <div className="hero bg-base-200 py-20">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center m-12 lg:text-left">
           <img src={SignUpImg} width={500} height={400} alt="Login" />

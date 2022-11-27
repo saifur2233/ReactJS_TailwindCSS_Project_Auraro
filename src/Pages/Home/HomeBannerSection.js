@@ -16,7 +16,7 @@ const HomeBannerSection = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-gost">Get Started</button>
+          <button className="btn btn-gost">Shop Now</button>
         </div>
       </div>
     </div>

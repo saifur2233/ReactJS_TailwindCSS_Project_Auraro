@@ -47,7 +47,7 @@ const Login = () => {
     });
   };
   return (
-    <div className="hero py-20">
+    <div className="hero bg-base-200 py-20">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center m-12 lg:text-left">
           <img src={Loginimg} width={500} height={400} alt="Login" />
