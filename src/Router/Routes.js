@@ -6,7 +6,7 @@ import SignUp from "../Pages/Auth/SignUp";
 import Blogs from "../Pages/Blogs/Blogs";
 import AllBuyer from "../Pages/Dashboard/AllBuyer/AllBuyer";
 import AllSeller from "../Pages/Dashboard/AllSeller/AllSeller";
-import AddProduct from "../Pages/Dashboard/AllUsers/AddProduct/AddProduct";
+import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
 import NotFound from "../Pages/Error/NotFound";
