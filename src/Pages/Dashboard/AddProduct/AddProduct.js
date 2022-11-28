@@ -21,7 +21,7 @@ const AddProduct = () => {
     const location = form.location.value;
     const description = form.description.value;
     const yearOfPurchase = form.yearOfPurchase.value;
-    const seller = user?.displayName;
+    const seller = user?.email;
     const time = new Date().toLocaleString();
 
     const formData = new FormData();
