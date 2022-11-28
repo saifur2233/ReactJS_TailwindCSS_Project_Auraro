@@ -7,7 +7,7 @@ const ProductCardDetails = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/category/:${id}`)
+    fetch(`https://auraro-server.vercel.app/category/:${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error(error));

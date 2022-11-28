@@ -18,7 +18,7 @@ const HomeProducts = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/category?category=${category}`)
+    fetch(`https://auraro-server.vercel.app/category?category=${category}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [category]);

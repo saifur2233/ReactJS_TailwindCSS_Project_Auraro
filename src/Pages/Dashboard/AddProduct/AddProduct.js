@@ -52,7 +52,7 @@ const AddProduct = () => {
           };
 
           //save product
-          fetch("http://localhost:5000/products", {
+          fetch("https://auraro-server.vercel.app/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -63,6 +63,7 @@ const AddProduct = () => {
             .then((result) => {
               console.log(result);
               toast.success("Product added Successfully");
+              navigate("/dashboard/myproducts");
             });
         }
       });

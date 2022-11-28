@@ -63,7 +63,7 @@ const SignUp = () => {
     const user = { name: name, email: email, role: role };
     console.log("Save User   :", user.name);
     axios
-      .post("http://localhost:5000/users", user)
+      .post("https://auraro-server.vercel.app/users", user)
       .then(function (response) {
         console.log(response);
         setCreatedUserEmail(email);

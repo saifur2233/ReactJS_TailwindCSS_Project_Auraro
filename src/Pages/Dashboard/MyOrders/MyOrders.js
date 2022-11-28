@@ -10,7 +10,9 @@ const MyOrders = () => {
   const { data: myOrders = [], isLoading } = useQuery({
     queryKey: ["myOrders", email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/orders?email=${email}`);
+      const res = await fetch(
+        `https://auraro-server.vercel.app/orders?email=${email}`
+      );
       const data = await res.json();
       return data;
     },
