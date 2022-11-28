@@ -13,6 +13,7 @@ import NotFound from "../Pages/Error/NotFound";
 import Home from "../Pages/Home/Home";
 import ProductCardDetails from "../Pages/Home/ProductCardDetails";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {

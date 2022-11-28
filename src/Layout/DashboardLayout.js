@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { AuthContext } from "../Context/UserContext";
+import useAdmin from "../Hooks/useAdmin";
 import NavBar from "../Shared/Header/NavBar";
 
 const DashboardLayout = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div>
       <NavBar></NavBar>
@@ -27,6 +31,7 @@ const DashboardLayout = () => {
             <li>
               <Link to="/dashboard/addproduct">Add Product</Link>
             </li>
+
             <li>
               <Link to="/dashboard/allseller">All Seller</Link>
             </li>
