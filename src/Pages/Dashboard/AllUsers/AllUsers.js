@@ -30,7 +30,7 @@ const AllUsers = () => {
 
   const hnadleDeleteUser = (myuser) => {
     console.log(myuser);
-    fetch(`http://localhost:5000/users/${myuser._id}`, {
+    fetch(`https://auraro-server.vercel.app/users/${myuser._id}`, {
       method: "DELETE",
       // headers: {
       //   authorization: `bearer ${localStorage.getItem("accessToken")}`,

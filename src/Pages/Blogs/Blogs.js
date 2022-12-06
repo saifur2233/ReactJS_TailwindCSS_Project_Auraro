@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div>
+    <div className="bg-base-200 py-12">
       <div className="card my-10 card-bordered border-secondary w-full bg-base-100 shadow-xxl">
         <div className="card-body">
           <h2 className="card-title text-3xl">

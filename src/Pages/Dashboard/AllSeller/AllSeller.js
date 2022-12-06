@@ -30,7 +30,7 @@ const AllSeller = () => {
 
   const hnadleDeleteUser = (myuser) => {
     console.log(myuser);
-    fetch(`http://localhost:5000/users/${myuser._id}`, {
+    fetch(`https://auraro-server.vercel.app/users/${myuser._id}`, {
       method: "DELETE",
       // headers: {
       //   authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -47,8 +47,8 @@ const AllSeller = () => {
   };
 
   return (
-    <div className="">
-      <div className="my-12">
+    <div className="bg-base-200">
+      <div className="py-12">
         <h1 className="text-5xl font-bold text-center">All Sellers</h1>
       </div>
       <div className="overflow-x-auto w-full">

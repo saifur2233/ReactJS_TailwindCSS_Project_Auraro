@@ -35,7 +35,7 @@ const MyProducts = () => {
 
   const handleDeleteProduct = (myproduct) => {
     console.log(myproduct);
-    fetch(`http://localhost:5000/users/${myproduct._id}`, {
+    fetch(`https://auraro-server.vercel.app/users/${myproduct._id}`, {
       method: "DELETE",
       // headers: {
       //   authorization: `bearer ${localStorage.getItem("accessToken")}`,

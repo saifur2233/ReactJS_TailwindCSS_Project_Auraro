@@ -15,6 +15,7 @@ import ProductCardDetails from "../Pages/Home/ProductCardDetails";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myproducts",
         element: <MyProducts></MyProducts>,
+      },
+      {
+        path: "/dashboard/wishlist",
+        element: <MyWishList></MyWishList>,
       },
     ],
   },
