@@ -16,3 +16,6 @@ Password: 123456
 
 ### Home Page
 ![image](https://user-images.githubusercontent.com/85455377/230288945-30253db6-7430-4979-b8b7-c4a5ca018502.png)
+
+### Products
+![image](https://user-images.githubusercontent.com/85455377/230289193-976b8634-3888-43b8-96f8-a706ff4f7229.png)
